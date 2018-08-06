@@ -1,2 +1,37 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: url('https://images.unsplash.com/photo-1529592767881-c6bb394eb83d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9e94aa1ae025d709fe26cc214a4a0e96&auto=format&fit=crop&w=750&q=80');">
+
+  <div class="banner-content">
+    <h1>BoaTbnb</h1>
+    <p>Just on the sea</p>
+    <a class="btn btn-primary btn-lg">Start now</a>
+  </div>
+</div>
+
+
+
+
+<div class="container">
+  <div class="row">
+   <% @boats.each do |boat| %>
+    <div class="col-xs-12 col-sm-4">
+      <!-- insert <div class="card"> -->
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('');">
+  <div class="card-category"><%= link_to boat.name, boat_path(boat.id)%></div>
+  <div class="card-description">
+    <%= boat.address %>
+    <%= boat.price %>
+    <%= boat.model %>
+  </div>
+  <img class="card-user" src="">
+  <a class="card-link" href="#" ></a>
+</div>
+    </div>
+<% end %>
+</div>
+</div>
+
+
+
+
+
+

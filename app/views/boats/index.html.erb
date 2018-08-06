@@ -1,0 +1,24 @@
+<div class="container wrapper-blue">
+  <div class="row">
+   <% @boats.each do |boat| %>
+    <div class="col-xs-12 col-sm-4">
+      <!-- insert <div class="card"> -->
+        <div class="wrapper">
+          <div class="infos">
+            <%= link_to boat.name, boat_path(boat.id), class: "title"%>
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('');">
+              <div class="card-category"></div>
+              <div class="card-description">
+                <%= boat.address %>
+                <%= boat.price %>
+                <%= boat.model %>
+              </div>
+              <img class="card-user" src="">
+              <a class="card-link" href="#" ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
