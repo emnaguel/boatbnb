@@ -1,9 +1,14 @@
-
-<%= simple_form_for(@boat) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :model %>
-    <%= f.input :address, id: "boat_address" %>
-    <%= f.input :description %>
-    <%= f.input :price %>
-    <%= f.button :submit, class: 'btn btn-primary'%>
-<% end %>
+<div class="container wrapper-blue">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4 new_boat">
+      <%= simple_form_for(@boat) do |f| %>
+          <%= f.input :name %>
+          <%= f.input :model %>
+          <%= f.input :address, id: "boat_address" %>
+          <%= f.input :description %>
+          <%= f.input :price %>
+          <%= f.button :submit, class: 'btn btn-primary'%>
+      <% end %>
+    </div>
+  </div>
+</div>
