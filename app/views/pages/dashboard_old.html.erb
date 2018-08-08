@@ -1,0 +1,101 @@
+<div class="container wrapper-blue">
+
+  <ul class="nav nav-tabs nav-justified">
+    <li class="active"><a data-toggle="tab" href="#home">My Boats</a></li>
+    <li><a data-toggle="tab" href="#menu2">My Bookings</a></li>
+  </ul>
+
+  <div class="tab-content">
+
+    <div id="home" class="tab-pane fade in active">
+      <% @boats.each do |boat| %>
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-4">
+              <div class="card-owner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
+                <div class="card-category"> <h1><%= link_to boat.name, boat_path(boat.id) %></h1>
+                  <p><%= boat.stars %></p>
+                  <p> <i class="far fa-envelope"></i><%= boat.owner.email %></p>
+                  <p><i class="fas fa-map-pin"></i><%= boat.address %></p>
+                  <p><i class="fas fa-euro-sign"></i><%= boat.price %></p>
+                  <p><i class="fas fa-ship"></i><%= boat.model %></p>
+                    <div class="delete"><%= link_to boat_path(boat.id), method: :delete,
+                  data: { confirm: "Are you sure?" } do %>
+                    <i class="fas fa-trash-alt"></i>
+                    <% end %>
+                  </div>
+                <div class="card-description-boat">My Boats</div>
+              <% end %>
+              </div>
+            </div>
+          </div>
+
+
+
+            <% @bookings_as_owner.each do |booking|  %>
+             <div class="col-xs-12 col-sm-4">
+              <div class="card-owner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
+                <div class="card-category"> <h1><%= link_to booking.boat.name, boat_path(booking.boat.id)  %></h1>
+                  <p><i class="far fa-envelope"></i><%= booking.boat.owner.email %></p>
+                    <p><i class="fas fa-map-pin"></i><%= booking.boat.address %></p>
+                    <p><i class="fas fa-euro-sign"></i><%= booking.boat.price %></p>
+                  <p><i class="fas fa-calendar-alt"></i><%= booking.start_date %>|<%= booking.end_date %></p>
+                  <div class="delete"><%= link_to boat_path(booking.boat.id), method: :delete,
+                  data: { confirm: "Are you sure?" } do %>
+                    <i class="fas fa-trash-alt"></i>
+                    <% end %>
+                  </div>
+                </div>
+                <div class="card-description-booking">My Bookings</div>
+              </div>
+            </div>
+            <% end %>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div id="menu2" class="tab-pane fade">
+
+      <div class="container">
+        <div class="row">
+            <% @bookings_as_renter.order(created_at: :desc).first(5).each do |booking| %>
+          <div class="col-xs-12 col-sm-4">
+            <!-- insert <div class="card"> -->
+            <div class="card-booking" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
+              <div class="card-category"><h1> <%= link_to booking.boat.name, boat_path(booking.boat.id)   %></h1>
+                <p><i class="far fa-envelope"></i><%= booking.boat.owner.email %></p>
+
+                <p><i class="fas fa-calendar-alt"></i><%= booking.start_date  %>|<%= booking.end_date  %></p>
+                <p><i class="fas fa-euro-sign"></i><%= booking.total_price %></p>
+              </div>
+
+            </div>
+          </div>
+             <% end %>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+

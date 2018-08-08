@@ -9,14 +9,24 @@
             <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('');">
               <div class="card-category"></div>
               <div class="card-description">
-                <%= boat.address %>
-                <%= boat.price %>
-                <%= boat.model %>
+                <p><i class="fas fa-map-pin"></i><%= boat.address %></p>
+                <p><i class="fas fa-euro-sign"></i><%= boat.price %></p>
+                <p><i class="fas fa-ship"></i><%= boat.model %></p>
               </div>
               <img class="card-user" src="">
               <a class="card-link" href="#" ></a>
             </div>
           </div>
+            <% if policy(boat).update? %>
+                <%= link_to edit_boat_path(boat.id) do %>
+                  <i class="fas fa-edit edit-index"></i>
+                <% end %>
+            <% end %>
+            <% if policy(boat).destroy? %>
+                <%= link_to boat, method: :delete, data: {confirm: "Are you sure?"} do %>
+                  <i class="fas fa-trash-alt delete-index"></i>
+                <% end %>
+            <% end %>
         </div>
       </div>
     <% end %>

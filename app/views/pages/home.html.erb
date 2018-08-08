@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: url('https://images.unsplash.com/photo-1529592767881-c6bb394eb83d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9e94aa1ae025d709fe26cc214a4a0e96&auto=format&fit=crop&w=750&q=80');">
+<div class="banner" style="background-image: url('https://images.unsplash.com/photo-1504124543157-05127c837b30?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=143236659899441a6b216590c8c2b3af&auto=format&fit=crop&w=968&q=80');">
 
   <div class="banner-content">
     <h1>BoaTbnb</h1>
@@ -18,7 +18,7 @@
 <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('');">
   <div class="card-category"><%= link_to boat.name, boat_path(boat.id)%></div>
   <div class="card-description">
-    <%= boat.address %>
+    <p><i class="fas fa-map-pin"></i><%= boat.address %></p>
     <%= boat.price %>
     <%= boat.model %>
   </div>

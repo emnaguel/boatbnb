@@ -1,16 +1,15 @@
-#new_boat {
+.owner-infos {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-    /* height: 100%; */
-    margin-top: 30px;
     background-color: white;
-    /* width: 108%; */
-    padding: 18px;
-  }
+    height: 60vh;
 
-.form-show {
+    padding: 10px;
+}
+
+.renter-infos{
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-        margin-top: 3%;
     background-color: white;
-    height: 38vh;
-    width: 30vw;
+    height: 60vh;
+
+    padding: 10px;
 }

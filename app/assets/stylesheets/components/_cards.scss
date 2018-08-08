@@ -8,6 +8,33 @@
   height: 185px;
   margin-bottom: 40px;
 }
+
+.card-booking {
+ text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+ background-size: cover !important;
+ background-position: center;
+ color: white;
+ position: relative;
+ margin-top: 14px;
+ height: 185px;
+ margin-bottom: 0px;
+
+}
+
+
+.card-owner {
+ text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+ background-size: cover !important;
+ background-position: center;
+ color: white;
+ position: relative;
+ margin-top: 24px;
+ margin-bottom: 40px;
+ height: 230px;
+ width: 349px;
+ margin-left: 20px;
+
+}
 .card-user {
   position: absolute;
   right: 10px;
@@ -17,16 +44,69 @@
 }
 .card-category {
   position: absolute;
-  top: 10px;
+  top: 0px;
   left: 10px;
   font-size: 15px;
   text-transform: uppercase;
+  bottom: 37px;
 }
 .card-description {
   position: absolute;
   bottom: 10px;
   left: 10px;
 }
+
+.card-description-boat {
+ position: absolute;
+
+
+    top: 200px;
+    right: 116px;
+ background-color: #9CFFFA;
+ width: 101px;
+ display: flex;
+ justify-content: center;
+ height: 30px;
+ align-items: center;
+
+
+}
+.card-description-boat h2 {
+  font-size: 24px;
+
+}
+
+.card-description-boat p {
+ font-size: 14px;
+ opacity: 0.7;
+ font-weight: lighter;
+}
+
+.card-description-booking {
+  position: absolute;
+  background-color: #E3170A !important;
+  width: 116px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  bottom: 0px;
+  left: 0px;
+
+}
+
+.card-description-booking h2 {
+  font-size: 24px;
+
+}
+
+.card-description-booking p {
+  font-size: 14px;
+  opacity: 0.7;
+  font-weight: lighter;
+}
+
+
 .card-description h2 {
   font-size: 24px;
 }
@@ -47,4 +127,33 @@
 }
 .card-link:hover {
   opacity: 0.1;
+}
+
+.delete {
+  position: absolute;
+  left: 319px;
+  top: 3px;
+
+}
+
+.edit-boat {
+  position: absolute;
+  left: 296px;
+  top: 3px;
+}
+
+
+.edit-booking{
+    position: absolute;
+   left: 297px;
+    top: 3px;
+
+}
+
+.fa-edit {
+  color: #9CFFFA;
+}
+
+.fa-trash-alt {
+  color: #E3170A;
 }
