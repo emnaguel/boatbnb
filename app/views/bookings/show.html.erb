@@ -1,0 +1,39 @@
+<div class="container wrapper-blue">
+  <div class="row flex-show">
+    <div class="col-xs-12 col-sm-3 boat-card">
+      <h1><%= @booking.boat.name %></h1>
+
+      <p> <i class="far fa-envelope"></i> <%= @booking.boat.owner.email %></p>
+      <p><i class="fas fa-map-pin"></i><%= @booking.boat.address %></p>
+      <p><i class="fas fa-euro-sign"></i><%= @booking.boat.price %></p>
+      <p><i class="fas fa-ship"></i><%= @booking.boat.model %></p>
+      <%= @booking.boat.stars %>
+      <%= @booking.boat.description %>
+      <p><i class="fas fa-calendar-alt"></i><%= @booking.start_date  %>|<%= @booking.end_date  %></p>
+      <%= link_to "Update this Booking",  edit_booking_path(@booking)  %>
+    </div>
+
+    <div class="col-xs-12 col-sm-3">
+      <h1>Write your review<h1>
+      <%= simple_form_for([@booking, @review]) do |f| %>
+        <%= f.input :content %>
+        <%= f.input :rating %>
+        <%= f.button :submit, class: 'btn btn-primary'%>
+      <% end %>
+    </div>
+</div>
+
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-xs-12 col-sm-3">
+          <h3>Reviews</h3>
+        <% @booking.reviews.each do |r| %>
+          <%= r.content %>
+          <p><%= r.rating %>/5</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+

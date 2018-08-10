@@ -15,6 +15,7 @@ class BoatsController < ApplicationController
 
     @booking = Booking.new
     authorize @boat
+
   end
 
   def new
@@ -57,6 +58,6 @@ class BoatsController < ApplicationController
   private
 
   def boat_params
-    params.require(:boat).permit(:name, :address, :description, :stars, :model, :price, :user_id)
+    params.require(:boat).permit(:name, :address, :description, :stars, :model, :price, :user_id, :photo)
   end
 end

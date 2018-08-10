@@ -10,14 +10,29 @@
       <%= @boat.description %>
     </div>
 
-    <div class="col-xs-12 col-sm-3 form-show">
-      <h5><strong>Book this boat</strong></h5>
-      <%= simple_form_for([@boat, @booking]) do |f| %>
-        <%= f.input :start_date, as: :string, placeholder: "Start date?", input_html: { class: "datepickr", id: 'book-a-boat-start', data: {bookingdates: @bookings.to_json} } %>
-        <%= f.input :end_date, as: :string, placeholder: "End date?", input_html: { class: "datepickr", id: 'book-a-boat-end', data: {bookingdates: @bookings.to_json} } %>
-        <%= f.button :submit, class: 'btn btn-default'%>
-      <% end %>
-    </div>
+    <% if @boat.owner != current_user %>
+      <div class="col-xs-12 col-sm-3 form-show">
+        <h5><strong>Book this boat</strong></h5>
+        <%= simple_form_for([@boat, @booking]) do |f| %>
+          <%= f.input :start_date, as: :string, placeholder: "Start date?", input_html: { class: "datepickr", id: 'book-a-boat-start', data: {bookingdates: @bookings.to_json} } %>
+          <%= f.input :end_date, as: :string, placeholder: "End date?", input_html: { class: "datepickr", id: 'book-a-boat-end', data: {bookingdates: @bookings.to_json} } %>
+          <%= f.button :submit, class: 'btn btn-default'%>
+        <% end %>
+      </div>
+    <% else %>
+     <div class="col-xs-12 col-sm-3 form-show">
+      <p><%= @boat.name %> was booked by</p>
+        <p><% @boat.bookings.first(3).each do |b| %>
+            <%= b.user.email %>
+            <p><strong>From</strong> <%= b.start_date %> <strong>To</strong> <%= b.end_date %></p>
+          <% end %></p>
+
+     </div>
+    <% end %>
   </div>
+
 </div>
+
+
+
 

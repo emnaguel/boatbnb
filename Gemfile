@@ -31,3 +31,7 @@ end
 
 gem 'pundit'
 gem 'devise'
+
+gem 'cloudinary'
+gem "figaro"
+gem 'carrierwave', '~> 1.2'
