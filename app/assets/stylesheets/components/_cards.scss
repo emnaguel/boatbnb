@@ -74,6 +74,16 @@ h1 {
 }
 }
 
+.card-category-show {
+  position: absolute;
+    top: 0px;
+    left: 10px;
+    font-size: 15px;
+    text-transform: uppercase;
+    bottom: 37px;
+
+}
+
 .card-category-home {
 
   color: white;
@@ -115,7 +125,11 @@ h1 {
   left: 18px;
 }
 
-
+.card-description-show-banner {
+    position: absolute;
+    top: 74px;
+    left: 18px;
+}
 
 .card-description-boat {
  position: absolute;

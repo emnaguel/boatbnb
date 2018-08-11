@@ -35,3 +35,6 @@ gem 'devise'
 gem 'cloudinary'
 gem "figaro"
 gem 'carrierwave', '~> 1.2'
+gem 'mini_magick'
+gem 'fog-aws'
+gem "geocoder"

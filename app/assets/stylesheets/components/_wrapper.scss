@@ -41,3 +41,26 @@
  width: 349px;
 
 }
+
+.wrapper-show-white {
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
+    background-color: white;
+    padding: 10px;
+    position: relative;
+    height: 304px;
+    margin-top: 30px;
+    margin-left: 40%;
+    margin-bottom: 55px;
+    margin-right: 20px;
+    width: 349px;
+
+
+}
+
+.wrapper-banner {
+
+    background-position: center;
+    background-size: cover;
+    height: 85vh;
+        display: flex;
+}
