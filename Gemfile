@@ -38,3 +38,4 @@ gem 'carrierwave', '~> 1.2'
 gem 'mini_magick'
 gem 'fog-aws'
 gem "geocoder"
+gem 'dotenv-rails', groups: [:development, :test]

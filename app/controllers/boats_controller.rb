@@ -1,11 +1,20 @@
 class BoatsController < ApplicationController
   def index
     @boats = policy_scope(Boat)
+
   end
 
 
   def show
     @boat = Boat.find(params[:id])
+
+
+   @marker = [{
+      lat: @boat.latitude,
+      lng: @boat.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }] if (@boat.latitude.present? && @boat.longitude.present?)
+
     @bookings = []
     num_bookings = 0
     @boat.bookings.each do |booking|
