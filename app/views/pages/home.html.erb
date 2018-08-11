@@ -15,12 +15,11 @@
    <% @boats.each do |boat| %>
     <div class="col-xs-12 col-sm-4">
       <!-- insert <div class="card"> -->
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('');">
-  <div class="card-category"><%= link_to boat.name, boat_path(boat.id)%></div>
-  <div class="card-description">
-    <p><i class="fas fa-map-pin"></i><%= boat.address %></p>
-    <%= boat.price %>
-    <%= boat.model %>
+<div class="card-owner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),  url('<%= cl_image_path boat.photo, height: 300, width: 400, crop: :fill %>')">
+  <div class="card-category-home"><%= link_to boat.name, boat_path(boat.id), class: 'card-category-home'%></div>
+  <div class="card-description-home">
+    <p><%= boat.model %></p>
+    <p class = "boat_address_title"><i class="fas fa-map-pin"></i><%= boat.address %></p>
   </div>
   <img class="card-user" src="">
   <a class="card-link" href="#" ></a>
@@ -29,7 +28,6 @@
 <% end %>
 </div>
 </div>
-
 
 
 

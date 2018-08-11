@@ -4,19 +4,21 @@
     <div class="col-xs-12 col-sm-4">
       <!-- insert <div class="card"> -->
         <div class="wrapper">
-          <div class="infos">
-            <%= link_to boat.name, boat_path(boat.id), class: "title"%>
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('');">
+
+
+            <%= link_to boat.name, boat_path(boat.id), class: "title-index"%>
+            <div class="card-owner-index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),  url('<%= cl_image_path boat.photo, height: 300, width: 400, crop: :fill %>')">
               <div class="card-category"></div>
-              <div class="card-description">
+              <img class="card-user" src="">
+              <a class="card-link" href="#" ></a>
+            </div>
+              <div class="card-description-index">
+                <p> <i class="far fa-envelope"></i><%= boat.owner.email %></p>
                 <p><i class="fas fa-map-pin"></i><%= boat.address %></p>
                 <p><i class="fas fa-euro-sign"></i><%= boat.price %></p>
                 <p><i class="fas fa-ship"></i><%= boat.model %></p>
               </div>
-              <img class="card-user" src="">
-              <a class="card-link" href="#" ></a>
-            </div>
-          </div>
+
             <% if policy(boat).update? %>
                 <%= link_to edit_boat_path(boat.id) do %>
                   <i class="fas fa-edit edit-index"></i>
