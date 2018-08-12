@@ -1,0 +1,15 @@
+.content-home {
+  display: flex;
+  background-color: white;
+  height: 90vh;
+}
+
+
+.map {
+  flex: 0 0 400px;
+  height: 90vh !important;
+  position: sticky !important; /* !important to override Gmaps inline CSS */
+  top: 0 !important;
+      margin-left: 25px;
+}
+
